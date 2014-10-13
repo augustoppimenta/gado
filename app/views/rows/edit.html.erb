@@ -1,6 +1,5 @@
-<h1>Editing row</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Show', @row %> |
-<%= link_to 'Back', rows_path %>
+<%- model_class = Row -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => [:'helpers.titles.edit', 'Edit %{model}'], :model => Row %></h1>
+</div>
+<%= render :partial => 'form' %>

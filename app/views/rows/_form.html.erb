@@ -1,29 +1,16 @@
-<%= form_for(@row) do |f| %>
-  <% if @row.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@row.errors.count, "error") %> prohibited this row from being saved:</h2>
-
-      <ul>
-      <% @row.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+<%= form_for @row, :html => { :class => 'form-horizontal form-model' } do |f| %>
+  <div class="form-group">
+    <%= f.label :age, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :age, :class => 'text-field form-control' %>
     </div>
-  <% end %>
+  </div>
 
-  <div class="field">
-    <%= f.label :user_id %><br>
-    <%= f.text_field :user_id %>
-  </div>
-  <div class="field">
-    <%= f.label :age %><br>
-    <%= f.text_field :age %>
-  </div>
-  <div class="field">
-    <%= f.label :race_id %><br>
-    <%= f.text_field :race_id %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-group">
+    <div class='col-md-offset-2 col-md-10'>
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                  rows_path, :class => 'btn btn-default' %>
+    </div>
   </div>
 <% end %>
