@@ -1,0 +1,29 @@
+<h1>Listing rows</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Age</th>
+      <th>Race</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @rows.each do |row| %>
+      <tr>
+        <td><%= row.user %></td>
+        <td><%= row.age %></td>
+        <td><%= row.race %></td>
+        <td><%= link_to 'Show', row %></td>
+        <td><%= link_to 'Edit', edit_row_path(row) %></td>
+        <td><%= link_to 'Destroy', row, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Row', new_row_path %>

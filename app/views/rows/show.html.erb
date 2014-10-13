@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @row.user %>
+</p>
+
+<p>
+  <strong>Age:</strong>
+  <%= @row.age %>
+</p>
+
+<p>
+  <strong>Race:</strong>
+  <%= @row.race %>
+</p>
+
+<%= link_to 'Edit', edit_row_path(@row) %> |
+<%= link_to 'Back', rows_path %>
