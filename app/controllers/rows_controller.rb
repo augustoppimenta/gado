@@ -29,6 +29,7 @@ class RowsController < ApplicationController
   # POST /rows.json
   def create
     @row = Row.new(row_params)
+    @row.user = current_user
 
     respond_to do |format|
       if @row.save
